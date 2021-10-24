@@ -1,2 +1,2 @@
 # sv-configs
-A backup of my config files
+This repo is to backup my config files. If using only WMs, I use i3, dwm and cwm with some selected terminal applications. 
