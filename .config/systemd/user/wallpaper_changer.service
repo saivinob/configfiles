@@ -1,0 +1,14 @@
+# Copied/Adapted from https://ejmastnak.com/tutorials/arch/wallpaper/
+#
+[Unit]
+Description=Change the wallpaper at regular intervals
+#Wants=wallpaper_changer.timer
+
+[Service]
+Type=oneshot
+# Adjust path to script as needed
+ExecStart=/bin/sh /home/sv/.local/bin/wallpaper_changer.sh
+
+[Install]
+WantedBy=graphical.target
+

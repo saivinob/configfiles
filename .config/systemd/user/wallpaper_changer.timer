@@ -1,0 +1,13 @@
+# Copied/Adapted from https://ejmastnak.com/tutorials/arch/wallpaper/
+#
+[Unit]
+Description=Change wallpaper at regular intervals
+#Requires=wallpaper_changer.service
+
+[Timer]
+OnActiveSec=15s
+OnUnitActiveSec=20s
+
+[Install]
+WantedBy=timers.target
+
