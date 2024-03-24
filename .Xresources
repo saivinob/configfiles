@@ -1,63 +1,71 @@
-!!Xft settings (esp. useful on Debian (based) systems?!)
+!!!Xresources configuration
+
+!!Xft settings
+Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
 Xft.autohint: false
 Xft.hintstyle: hintslight
-Xft.dpi: 96
+Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
-!!Fonts
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!Fonts (theory :)
 !!Note: I have commented out all font lines below as I am very happy with the
 !!default xterm font used on openSUSE (fixed, at 9x18, set in the file
 !! "/usr/share/X11/app-defaults/XTerm").
 !
 !!Fonts can be specified in two ways; XLFD and XFT
 !
-!!1) X Logical Font Definition (XLFD), used (mostly?) for bitmap fonts
-!!-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-encdng
-!
-!XTerm*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
-!XTerm*font: -schumacher-clean-medium-r-normal-*-15-*-*-*-*-*-*-*
-!
-!!2) X FreeType (XFT), used for like ttf, otf fonts rendered by freetype2
-!
-!XTerm*faceName: Monospace
-!XTerm*faceSize: 10
-!
+!!X Logical Font Definition (XLFD), used (mostly?) for bitmap fonts has
+!!following format:
+!!-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-encdn
+g
+!! e.g. XTerm*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
+!!      XTerm*font: -schumacher-clean-medium-r-normal-*-15-*-*-*-*-*-*-*
+!!
+!!X FreeType (XFT), used for ttf/otf fonts rendered by freetype2 has
+!!following format:
+!!      XTerm*faceName: Monospace
+!!      XTerm*faceSize: 10
 !!Or in single line as below
-!XTerm*faceName: xft:Monospace:size=10
-!
-!!We can even ommit 'xft' and just write as below, including other available
-!!font properties
-!XTerm*faceName: Liberation Mono:size=10:antialias=true:hintstyle=hintnone
-!
-!!By default, if both bitmap and trutype fonts are set, truetype is used. 
+!!      XTerm*faceName: xft:Monospace:size=10
+!!      XTerm*faceName: Hack:pixelsize=14:antialias=true:hintstyle=hintfull
+!!
+!!Here, 'size' is for size in 'pt' and 'pixelsize' is for size in 'px'
+!!
+!!By default, if both bitmap and truetype fonts are set, truetype is used. 
 !!To start with truetype font disabled (to force use of XLFD font) use below
-!XTerm*renderFont: false
-!
+!!XTerm*renderFont: false
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!XTerm settings
+XTerm*faceName: xft:monospace:pixelsize=14
 !!Some fonts do not look good in bold mode
-!XTerm*boldFont: false
-!URxvt*boldFont: 
+XTerm*boldFont: false
+XTerm*termName: xterm-256color
+XTerm*title: Terminal (XTerm)
 
+!!Urxvt settings
+urxvt*font: xft:DejaVu Sans Mono:size=10
+!urxvt*font: -misc-fixed-medium-r-normal--15-*-*-*-*-*-*-*
+URxvt*boldFont:
+urxvt.letterSpace: -1
+!!fake transparency
+urxvt.transparent: true
+urxvt.shading: 32
 
-!!General settings.
+!!Common settings
 *.scrollBar: false
 *.scrollbarRight: false
-*.saveLines: 2048
-*.geometry: 100x24
-
-
-!!Application specific settings
-!URxvt*font: xft:Liberation Mono:size=10
-URxvt*font: -misc-fixed-medium-r-normal--15-*-*-*-*-*-*-*
-URxvt.letterSpace: -1
-URxvt.transparent: true
-
+*.saveLines: 4096
+*.geometry: 80x30
 
 !!Keyboard combinations like in other 'advanced' terminals.
 !!Source: 
 !!1) Arch wiki
-!!2)`http://www.futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration/
+!!2) http://www.futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration
+
 XTerm.vt100.translations: #override \n\
     Ctrl <Key> plus: larger-vt-font() \n\
     Ctrl <Key> minus: smaller-vt-font() \n\
@@ -67,40 +75,41 @@ XTerm.vt100.translations: #override \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
     Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
 
+!!Colors
+!!Bare minimum
+*.foreground: #93a1a1
+*.background: #141c21
+*.cursorColor: #afbfbf
 
-!!Colors (check https://terminal.sexy for various schemes)
-*.foreground:   #a8a19f
-*.background:   #1b1918
-*.cursorColor:  #a8a19f
-
+!! Colorscheme (https://terminal.sexy is a good source for various schemes)
 ! black
-*.color0:       #1b1918
-*.color8:       #766e6b
+*.color0: #263640
+*.color8: #4a697d
 
 ! red
-*.color1:       #f22c40
-*.color9:       #f22c40
+*.color1: #d12f2c
+*.color9: #fa3935
 
 ! green
-*.color2:       #5ab738
-*.color10:      #5ab738
+*.color2: #819400
+*.color10: #a4bd00
 
 ! yellow
-*.color3:       #d5911a
-*.color11:      #d5911a
+*.color3: #b08500
+*.color11: #d9a400
 
 ! blue
-*.color4:       #407ee7
-*.color12:      #407ee7
+*.color4: #2587cc
+*.color12: #2ca2f5
 
 ! magenta
-*.color5:       #6666ea
-*.color13:      #6666ea
+*.color5: #696ebf
+*.color13: #8086e8
 
 ! cyan
-*.color6:       #00ad9c
-*.color14:      #00ad9c
+*.color6: #289c93
+*.color14: #33c5ba
 
 ! white
-*.color7:       #a8a19f
-*.color15:      #f1efee
+*.color7: #bfbaac
+*.color15: #fdf6e3
