@@ -1,2 +1,2 @@
-# sv-configs
-This repo is to backup my config files. If using only WMs, I use i3, dwm and cwm with some selected terminal applications. 
+# Personal config files
+This repo is for backing up my config files. I mostly use WMs, using DEs only when really necessary e.g. for a family account. I use i3, dwm (on Linux and FreeBSD) and cwm (on OpenBSD), with some selected terminal applications.
