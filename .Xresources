@@ -10,17 +10,15 @@ Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!
 !!Fonts (theory :)
-!!Note: I have commented out all font lines below as I am very happy with the
-!!default xterm font used on openSUSE (fixed, at 9x18, set in the file
-!! "/usr/share/X11/app-defaults/XTerm").
-!
+!!
 !!Fonts can be specified in two ways; XLFD and XFT
-!
+!!
 !!X Logical Font Definition (XLFD), used (mostly?) for bitmap fonts has
 !!following format:
-!!-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-encdn
-g
+!!-fndry-fmly-wght-slant-sWdth-adstyl-pxlsz-ptSz-resx-resy-spc-avgWdth-rgstry-\
+!!                                                                      encdng
 !! e.g. XTerm*font: -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
 !!      XTerm*font: -schumacher-clean-medium-r-normal-*-15-*-*-*-*-*-*-*
 !!
@@ -37,6 +35,7 @@ g
 !!By default, if both bitmap and truetype fonts are set, truetype is used. 
 !!To start with truetype font disabled (to force use of XLFD font) use below
 !!XTerm*renderFont: false
+!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 !!XTerm settings
